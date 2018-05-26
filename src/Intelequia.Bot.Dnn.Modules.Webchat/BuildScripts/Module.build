@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <BuildScriptsPath>$(MSBuildProjectDirectory)\BuildScripts</BuildScriptsPath>
+    <WebsitePath>C:\Websites\prueba.dnndev.me</WebsitePath>
+    <WebsiteBinPath>$(WebsitePath)\bin</WebsiteBinPath>
+    <InstallPackagePath>$(MSBuildProjectDirectory)\Install</InstallPackagePath>
+    <Extension>zip</Extension>
+    <DNNFileName>Webchat</DNNFileName>
+    <PackageName>Webchat</PackageName>
+    <ModuleFolderPath>$(WebsitePath)\DesktopModules\$(DNNFileName)\</ModuleFolderPath>
+  </PropertyGroup>
+
+  <!--===========================================================
+      Prepare required assemblies
+      ===========================================================
+      Used by "PackageModule" and "CopyBin" targets.
+      Include third party assemblies.
+  -->
+  <Target Name="ModuleRequiredAssemblies">
+    <!--<CreateItem Include="$(MSBuildProjectDirectory)\bin\Newtonsoft.Json.dll">
+      <Output TaskParameter="Include" ItemName="RequiredAssemblies" />
+    </CreateItem>-->
+  </Target>
+
+
+
+
+  <!--===========================================================
+      Copy assemblies to local bin folder (*.dnndev.me\bin)
+      ===========================================================
+      This target copy all assemblies into bin folder in a 
+      local DNN instance.
+  -->
+  <Target Name="CopyBin" Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <!-- Copy module assembly -->
+    
+	<Copy SourceFiles="$(MSBuildProjectDirectory)\bin\$(AssemblyName).dll" DestinationFolder="$(WebsiteBinPath)" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\bin\$(AssemblyName).pdb" DestinationFolder="$(WebsiteBinPath)" />
+
+    <!-- Copy required assemblies -->
+    <!--<Copy SourceFiles="@(RequiredAssemblies)" DestinationFolder="$(WebsiteBinPath)" />-->
+  </Target>
+</Project>

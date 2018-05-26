@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
+<!-- WARNING, WARNING, WARNING -->
+<!-- REMEMBER THAT IF YOU MODIFY THE TARGETS FILE YOU NEED TO CLOSE/OPEN THE PROJECT FOR THE CHANGES TO TAKE EFFECT -->
+
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="MSBuild.Community.Tasks.Targets" />
+
+  <!--===========================================================
+      Prepare module resource files
+      ===========================================================
+      Used by "CopyModule" and "PackageModule" targets
+  -->
+  <Target Name="ModuleResources">
+    <!-- Prepare module files -->
+    <ItemGroup>
+      <ModuleInclude Include="**\*.ascx" Exclude="**\obj\**;packages\**;styleguides\**" />
+      <ModuleInclude Include="**\*.asmx" Exclude="**\obj\**;packages\**;styleguides\**" />
+      <ModuleInclude Include="**\*.aspx" Exclude="**\obj\**;packages\**;styleguides\**" />
+      <ModuleInclude Include="**\*.html" Exclude="**\obj\**;packages\**;styleguides\**" />
+      <ModuleInclude Include="**\*.htm" Exclude="**\obj\**;packages\**;styleguides\**" />
+      <ModuleInclude Include="**\*.resx" Exclude="**\obj\**;packages\**;styleguides\**" />
+      <ModuleInclude Include="**\*.js" Exclude="**\obj\**;packages\**;styleguides\**" />
+      <ModuleInclude Include="**\*.css" Exclude="**\obj\**;packages\**;styleguides\**" />
+      <ModuleInclude Include="**\*.txt"  Exclude="**\obj\**;**\_ReSharper*\**;packages\**;**\.git\**;styleguides\**" />
+      <ModuleInclude Include="**\fonts\**" Exclude="**\obj\**;packages\**;styleguides\**" />
+      <ModuleInclude Include="**\images\**" Exclude="**\obj\**;packages\**;styleguides\**" />
+      <ModuleInclude Include="**\Templates\**" Exclude="**\obj\**;packages\**;styleguides\**" />
+    </ItemGroup>
+  </Target>
+
+
+
+
+  <!--===========================================================
+      Copy the module into a local DNN instance after build [DEBUG]
+      ===========================================================
+      To change the destination folder go to Module.build.
+  -->
+  <Target Name="CopyModule"  Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <XmlRead Prefix="n"
+      Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+      XPath="dotnetnuke/packages/package[1]/@version"
+      XmlFileName="$(DNNFileName).dnn">
+      <Output TaskParameter="Value" PropertyName="Version" />
+    </XmlRead>
+    <Message Text="Version: $(Version)" Importance="Normal"></Message>
+
+    <!-- Copy module files -->
+    <Copy SourceFiles="@(ModuleInclude)" DestinationFolder="$(ModuleFolderPath)\%(RecursiveDir)" />
+
+  </Target>
+
+
+
+
+  <!--===========================================================
+      Create install and source packages after build [RELEASE]
+      ===========================================================
+      Packages will be created in the Install folder.
+  -->
+  <Target Name="PackageModule"  Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <XmlRead Prefix="n"
+      Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+      XPath="dotnetnuke/packages/package[1]/@version"
+      XmlFileName="$(DNNFileName).dnn">
+      <Output TaskParameter="Value" PropertyName="Version" />
+    </XmlRead>
+    <Message Text="Version: $(Version)" Importance="Normal"></Message>
+
+    <!-- We need some files into the root of the package in order to properly install in DNN-->
+    <CreateItem Include="$(DNNFileName).dnn">
+      <Output TaskParameter="Include" ItemName="PackageManifestFiles" />
+    </CreateItem>
+
+    <CreateItem Include="**\License.txt">
+      <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
+    </CreateItem>
+
+    <CreateItem Include="**\ReleaseNotes.txt">
+      <Output TaskParameter="Include" ItemName="PackageTxtFiles" />
+    </CreateItem>
+
+    <CreateItem Include="**\*.sqldataprovider">
+      <Output TaskParameter="Include" ItemName="SqlDataProviderFiles" />
+    </CreateItem>
+
+    <!-- Copy above files into the root folder of the package -->
+    <Copy SourceFiles="@(PackageManifestFiles)" DestinationFolder="$(MSBuildProjectDirectory)\InstallPackage" />
+    <Copy SourceFiles="@(PackageTxtFiles)" DestinationFolder="$(MSBuildProjectDirectory)\InstallPackage" />
+    <Copy SourceFiles="@(SqlDataProviderFiles)" DestinationFolder="$(MSBuildProjectDirectory)\InstallPackage\%(RecursiveDir)" />
+
+    <!-- Copy the module assembly into the root folder of the package -->
+    <Copy SourceFiles="$(MSBuildDnnBinPath)\$(AssemblyName).dll" DestinationFolder="$(MSBuildProjectDirectory)\InstallPackage\bin"/>
+
+    <!-- Copy required assemblies -->
+    <Copy SourceFiles="@(RequiredAssemblies)" DestinationFolder="$(MSBuildProjectDirectory)\InstallPackage\bin" />
+
+    <!-- Copy module resources into the ResourcesZip folder -->
+    <Copy SourceFiles="@(ModuleInclude)" DestinationFolder="$(MSBuildProjectDirectory)\ResourcesZip\%(RecursiveDir)" />
+
+    <!-- Prepare Resources.zip content -->
+    <CreateItem Include="$(MSBuildProjectDirectory)\ResourcesZip\**\*.*">
+      <Output TaskParameter="Include" ItemName="ResourcesZipContent" />
+    </CreateItem>
+
+    <!-- Create Resources.zip file -->
+    <Zip Files="@(ResourcesZipContent)" WorkingDirectory="$(MSBuildProjectDirectory)\ResourcesZip" ZipFileName="InstallPackage\Resources.$(Extension)" />
+
+    <!-- Remove ResourcesZip folder -->
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\ResourcesZip" />
+
+    <!-- Prepare install package content -->
+    <CreateItem Include="$(MSBuildProjectDirectory)\InstallPackage\**\*.*">
+      <Output TaskParameter="Include" ItemName="OutputContent" />
+    </CreateItem>
+
+    <!-- Create the install package -->
+    <Zip Files="@(OutputContent)" WorkingDirectory="$(MSBuildProjectDirectory)\InstallPackage" ZipFileName="Install\$(PackageName)_$(Version)_Install.$(Extension)" />
+
+    <!-- Remove InstallPackage folder -->
+    <RemoveDir Directories ="$(MSBuildProjectDirectory)\InstallPackage" />
+
+
+
+
+    <!-- Create source package
+        =======================-->
+
+    <!-- Prepare source package content -->
+    <ItemGroup>
+      <SourceInclude Include="**\*.*"
+
+        Exclude="**\.vs\**;
+        **\obj\**;
+        **\packages\**;
+        **\_ReSharper*\**;
+        **\bin\**;
+        **\.git\**;
+        **\Install\**;
+        **\*.user;
+        **\*.user;
+        **\*prepros*.*;
+        **\*.css.map;" />
+    </ItemGroup>
+
+    <!-- Create source package -->
+    <Zip Files="@(SourceInclude)" WorkingDirectory="$(MSBuildProjectDirectory)" ZipFileName="Install\$(PackageName)_$(Version)_Source.$(Extension)" />
+
+  </Target>
+
+</Project>

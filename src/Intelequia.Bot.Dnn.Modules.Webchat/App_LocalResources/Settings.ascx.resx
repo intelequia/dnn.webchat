@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ControlTitle_settings.Text" xml:space="preserve">
+    <value>Webchat Module Settings</value>
+  </data>
+  <data name="FacebookAppId.Help" xml:space="preserve">
+    <value>Facebook Messenger Web App Id from Azure Portal</value>
+  </data>
+  <data name="FacebookAppId.Text" xml:space="preserve">
+    <value>Facebook Bot Id</value>
+  </data>
+  <data name="lblChoiceDropDown.Help" xml:space="preserve">
+    <value>Choose Bot chat channel and config options below</value>
+  </data>
+  <data name="lblChoiceDropDown.Text" xml:space="preserve">
+    <value>Choose Bot channel</value>
+  </data>
+  <data name="SkypeSetting1.Help" xml:space="preserve">
+    <value>Skype Bot Id from azure bot channles options Skype url link.</value>
+  </data>
+  <data name="SkypeSetting1.Text" xml:space="preserve">
+    <value>Skype Bot Id</value>
+  </data>
+  <data name="WebchatSetting1.Help" xml:space="preserve">
+    <value>Web Chat secret key from azure bot channels options.</value>
+  </data>
+  <data name="WebchatSetting1.Text" xml:space="preserve">
+    <value>Secret Key</value>
+  </data>
+  <data name="lblChoiceSkypeStyleSelected.Help" xml:space="preserve">
+    <value>Choose how the Skype button will be shown.</value>
+  </data>
+  <data name="lblChoiceSkypeStyleSelected.Text" xml:space="preserve">
+    <value>Choose Style Button</value>
+  </data>
+  <data name="SkypeColorButton.Help" xml:space="preserve">
+    <value>Insert color for Skype button like #80DDFF</value>
+  </data>
+  <data name="SkypeColorButton.Text" xml:space="preserve">
+    <value>Button color</value>
+  </data>
+  <data name="SkypeTextButton.Help" xml:space="preserve">
+    <value>Change default text button</value>
+  </data>
+  <data name="SkypeTextButton.Text" xml:space="preserve">
+    <value>Button text</value>
+  </data>
+  <data name="lblSkypeAnimationEntry.Help" xml:space="preserve">
+    <value>Show or hide chat entry animation</value>
+  </data>
+  <data name="lblSkypeAnimationEntry.Text" xml:space="preserve">
+    <value>Animation entry</value>
+  </data>
+  <data name="lblSkypeDataClose.Help" xml:space="preserve">
+    <value>Check if want close chat option</value>
+  </data>
+  <data name="lblSkypeDataClose.Text" xml:space="preserve">
+    <value>Close chat</value>
+  </data>
+  <data name="lblSkypeDataCollapse.Help" xml:space="preserve">
+    <value>Check if want collapse chat option</value>
+  </data>
+  <data name="lblSkypeDataCollapse.Text" xml:space="preserve">
+    <value>Collapse chat</value>
+  </data>
+  <data name="lblSkypeDataUploadFile.Help" xml:space="preserve">
+    <value>Check if want upload file option</value>
+  </data>
+  <data name="lblSkypeDataUploadFile.Text" xml:space="preserve">
+    <value>Upload button</value>
+  </data>
+  <data name="lblSkypeShowHeader.Help" xml:space="preserve">
+    <value>Check to show chat header</value>
+  </data>
+  <data name="lblSkypeShowHeader.Text" xml:space="preserve">
+    <value>Show chat header</value>
+  </data>
+  <data name="SkypeAlternativeCssUrl.Help" xml:space="preserve">
+    <value>Type your alternative css chat style url</value>
+  </data>
+  <data name="SkypeAlternativeCssUrl.Text" xml:space="preserve">
+    <value>Alt Css url</value>
+  </data>
+  <data name="FacebookPageId.Help" xml:space="preserve">
+    <value>Facebook Messenger Web Page Id from Azure Portal</value>
+  </data>
+  <data name="FacebookPageId.Text" xml:space="preserve">
+    <value>Facebook Page Id</value>
+  </data>
+  <data name="FacebookExitMessage.Help" xml:space="preserve">
+    <value>Type a leave message.</value>
+  </data>
+  <data name="FacebookExitMessage.Text" xml:space="preserve">
+    <value>Leave Message</value>
+  </data>
+  <data name="FacebookThemeColor.Help" xml:space="preserve">
+    <value>Choose Hex six digits color for messenger theme color</value>
+  </data>
+  <data name="FacebookThemeColor.Text" xml:space="preserve">
+    <value>Theme Color</value>
+  </data>
+  <data name="FacebookWelcomeMessage.Help" xml:space="preserve">
+    <value>Type a welcome message.</value>
+  </data>
+  <data name="FacebookWelcomeMessage.Text" xml:space="preserve">
+    <value>Welcome Message</value>
+  </data>
+  <data name="lblFacebookDisplayGreeting.Help" xml:space="preserve">
+    <value>Choose how the chat will be displayed (show, hide, fade)</value>
+  </data>
+  <data name="lblFacebookDisplayGreeting.Text" xml:space="preserve">
+    <value>Display greeting</value>
+  </data>
+  <data name="WebchatBotName.Help" xml:space="preserve">
+    <value>Type your Bot Name for show it in dialog</value>
+  </data>
+  <data name="WebchatBotName.Text" xml:space="preserve">
+    <value>Bot Name</value>
+  </data>
+  <data name="WcButtonBackgroundColor.Help" xml:space="preserve">
+    <value>General background color for chat buttons (Default: #0078d7)</value>
+  </data>
+  <data name="WcButtonBackgroundColor.Text" xml:space="preserve">
+    <value>Background color</value>
+  </data>
+  <data name="WcButtonBorderColor.Help" xml:space="preserve">
+    <value>General buttons border color (Default: #cccccc)</value>
+  </data>
+  <data name="WcButtonBorderColor.Text" xml:space="preserve">
+    <value>Border color</value>
+  </data>
+  <data name="WcButtonTextColor.Help" xml:space="preserve">
+    <value>General Text button color (Default: #ffffff)</value>
+  </data>
+  <data name="WcButtonTextColor.Text" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="WcCardBackgroundColor.Help" xml:space="preserve">
+    <value>Card background color (Default: #ffffff)</value>
+  </data>
+  <data name="WcCardBackgroundColor.Text" xml:space="preserve">
+    <value>Background color</value>
+  </data>
+  <data name="WcCardButtonBackgroundcolorActive.Help" xml:space="preserve">
+    <value>Card "Active" button background color (Default: #0078d7)</value>
+  </data>
+  <data name="WcCardButtonBackgroundcolorActive.Text" xml:space="preserve">
+    <value>Active background color</value>
+  </data>
+  <data name="WcCardButtonBorderColorActive.Help" xml:space="preserve">
+    <value>Card "Active" button border color (Default: #0078d7)</value>
+  </data>
+  <data name="WcCardButtonBorderColorActive.Text" xml:space="preserve">
+    <value>Active border color</value>
+  </data>
+  <data name="WcCardButtonBorderColorHover.Help" xml:space="preserve">
+    <value>Card "Hover" button border color (Default: #0078d7)</value>
+  </data>
+  <data name="WcCardButtonBorderColorHover.Text" xml:space="preserve">
+    <value>Hover border color</value>
+  </data>
+  <data name="WcCardButtonTextColor.Help" xml:space="preserve">
+    <value>Card text button color (Default: #0078d7)</value>
+  </data>
+  <data name="WcCardButtonTextColor.Text" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="WcCardButtonTextColorActive.Help" xml:space="preserve">
+    <value>Card "Active" text button color (Default: #ffffff)</value>
+  </data>
+  <data name="WcCardButtonTextColorActive.Text" xml:space="preserve">
+    <value>Active text color</value>
+  </data>
+  <data name="WcCardButtonTextColorHover.Help" xml:space="preserve">
+    <value>Card "Hover" text button color (Default: #0078d7)</value>
+  </data>
+  <data name="WcCardButtonTextColorHover.Text" xml:space="preserve">
+    <value>Hover text color</value>
+  </data>
+  <data name="WcCarouselButtonScrollBackgroundcolor.Help" xml:space="preserve">
+    <value>Carousel button scroll background color (Default: #d2dde5)</value>
+  </data>
+  <data name="WcCarouselButtonScrollBackgroundcolor.Text" xml:space="preserve">
+    <value>Scroll background color</value>
+  </data>
+  <data name="WcCarouselButtonScrollBackgroundcolorFocus.Help" xml:space="preserve">
+    <value>Carousel "Focus" button scroll background color (Default: #808c95)</value>
+  </data>
+  <data name="WcCarouselButtonScrollBackgroundcolorFocus.Text" xml:space="preserve">
+    <value>Focus scroll bg color</value>
+  </data>
+  <data name="WcCarouselButtonScrollSvgFillColor.Help" xml:space="preserve">
+    <value>Carousel Svg Scroll button fill color (Default: #ffffff)</value>
+  </data>
+  <data name="WcCarouselButtonScrollSvgFillColor.Text" xml:space="preserve">
+    <value>Scroll svg color</value>
+  </data>
+  <data name="WcConsoleBorderColor.Help" xml:space="preserve">
+    <value>Console border color (Default: #dbdee1)</value>
+  </data>
+  <data name="WcConsoleBorderColor.Text" xml:space="preserve">
+    <value>Border color</value>
+  </data>
+  <data name="WcConsoleHasTextSvgFillColor.Help" xml:space="preserve">
+    <value>Console "has text" svg fill color (Default: #0078d7)</value>
+  </data>
+  <data name="WcConsoleHasTextSvgFillColor.Text" xml:space="preserve">
+    <value>Has text svg color</value>
+  </data>
+  <data name="WcConsoleHeight.Help" xml:space="preserve">
+    <value>Console height (Default: 50px)</value>
+  </data>
+  <data name="WcConsoleHeight.Text" xml:space="preserve">
+    <value>Console height</value>
+  </data>
+  <data name="WcConsoleSvgFillColor.Help" xml:space="preserve">
+    <value>Console svg fill color (Default: #8a8a8a)</value>
+  </data>
+  <data name="WcConsoleSvgFillColor.Text" xml:space="preserve">
+    <value>Svg fill color</value>
+  </data>
+  <data name="WcHeaderBackgroundColor.Help" xml:space="preserve">
+    <value>Chat Header background color (Default: #0078d7)</value>
+  </data>
+  <data name="WcHeaderBackgroundColor.Text" xml:space="preserve">
+    <value>Background color</value>
+  </data>
+  <data name="WcHeaderBoxshadowColor.Help" xml:space="preserve">
+    <value>Chat Header box shadow color (Default: rgba(0, 0, 0, 0.2))</value>
+  </data>
+  <data name="WcHeaderBoxshadowColor.Text" xml:space="preserve">
+    <value>Boxshadow color</value>
+  </data>
+  <data name="WcHeaderHeight.Help" xml:space="preserve">
+    <value>Chat Header height (total header height - (padding-top+padding-bottom)) (Default: 30px)</value>
+  </data>
+  <data name="WcHeaderHeight.Text" xml:space="preserve">
+    <value>Header height</value>
+  </data>
+  <data name="WcHeaderPadding.Help" xml:space="preserve">
+    <value>Chat Header padding (top right bottom left) (Default: 8px 8px 0 8px)</value>
+  </data>
+  <data name="WcHeaderPadding.Text" xml:space="preserve">
+    <value>Header padding</value>
+  </data>
+  <data name="WcHeaderTextColor.Help" xml:space="preserve">
+    <value>Chat Header text color (Default: #ffffff)</value>
+  </data>
+  <data name="WcHeaderTextColor.Text" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="WcMessageBottom.Help" xml:space="preserve">
+    <value>Message box height (console height) (Default: 50px)</value>
+  </data>
+  <data name="WcMessageBottom.Text" xml:space="preserve">
+    <value>Message Bottom</value>
+  </data>
+  <data name="WcMessageBoxTop.Help" xml:space="preserve">
+    <value>Message height (header total height) (Default: 38px)</value>
+  </data>
+  <data name="WcMessageBoxTop.Text" xml:space="preserve">
+    <value>Message top</value>
+  </data>
+  <data name="WcMessageContentBoxShadowColor.Help" xml:space="preserve">
+    <value>Message content box shadow color (Default: rgba(0, 0, 0, 0.2))</value>
+  </data>
+  <data name="WcMessageContentBoxShadowColor.Text" xml:space="preserve">
+    <value>Shadow color</value>
+  </data>
+  <data name="WcMessageContentSelectedBoxShadowColor.Help" xml:space="preserve">
+    <value>Message content selected box shadow color (Default: #ffa333)</value>
+  </data>
+  <data name="WcMessageContentSelectedBoxShadowColor.Text" xml:space="preserve">
+    <value>Selected shadow color</value>
+  </data>
+  <data name="WcMessageFromBotBackgroundcolor.Help" xml:space="preserve">
+    <value>Message from Bot background color (Default: #33adff)</value>
+  </data>
+  <data name="WcMessageFromBotBackgroundcolor.Text" xml:space="preserve">
+    <value>Background color</value>
+  </data>
+  <data name="WcMessageFromBotSvgFillColor.Help" xml:space="preserve">
+    <value>Message from Bot svg fill color (Default: #eceff1)</value>
+  </data>
+  <data name="WcMessageFromBotSvgFillColor.Text" xml:space="preserve">
+    <value>Svg fill color</value>
+  </data>
+  <data name="WcMessageFromBotTextColor.Help" xml:space="preserve">
+    <value>Message from Bot text color (Default: #000000)</value>
+  </data>
+  <data name="WcMessageFromBotTextColor.Text" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="WcMessageFromMeBackgroundcolor.Help" xml:space="preserve">
+    <value>Message from me background color (Default: #0078d7)</value>
+  </data>
+  <data name="WcMessageFromMeBackgroundcolor.Text" xml:space="preserve">
+    <value>Background color</value>
+  </data>
+  <data name="WcMessageFromMeSvgFillColor.Help" xml:space="preserve">
+    <value>Message from me svg fill color (Default: #0078d7)</value>
+  </data>
+  <data name="WcMessageFromMeSvgFillColor.Text" xml:space="preserve">
+    <value>Svg fill color</value>
+  </data>
+  <data name="WcMessageFromMeTextColor.Help" xml:space="preserve">
+    <value>Message from me text color (Default: #ffffff)</value>
+  </data>
+  <data name="WcMessageFromMeTextColor.Text" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="WcMessageFromTextColor.Help" xml:space="preserve">
+    <value>Message from general text color (Default: #767676)</value>
+  </data>
+  <data name="WcMessageFromTextColor.Text" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="WcSuggestedActionsBottom.Help" xml:space="preserve">
+    <value>Suggested actions bottom height (console height) (Default: 50px)</value>
+  </data>
+  <data name="WcSuggestedActionsBottom.Text" xml:space="preserve">
+    <value>Suggested Bottom</value>
+  </data>
+  <data name="WcSuggestedBorderColorActive.Help" xml:space="preserve">
+    <value>Suggested actions "Active" button border color (Default: #0078d7)</value>
+  </data>
+  <data name="WcSuggestedBorderColorActive.Text" xml:space="preserve">
+    <value>Active border color</value>
+  </data>
+  <data name="WcSuggestedBorderColorFocus.Help" xml:space="preserve">
+    <value>Suggested actions "Focus" button border color (Default: #0078d7)</value>
+  </data>
+  <data name="WcSuggestedBorderColorFocus.Text" xml:space="preserve">
+    <value>Focus Border color</value>
+  </data>
+  <data name="WcSuggestedButtonBackgroundcolorActive.Help" xml:space="preserve">
+    <value>Suggested actions "Active" background color (Default: #0078d7)</value>
+  </data>
+  <data name="WcSuggestedButtonBackgroundcolorActive.Text" xml:space="preserve">
+    <value>Active background color</value>
+  </data>
+  <data name="WcSuggestedButtonBackgroundcolorFocus.Help" xml:space="preserve">
+    <value>Suggested actions background "Focus" button color (Default: #f9f9f9)</value>
+  </data>
+  <data name="WcSuggestedButtonBackgroundcolorFocus.Text" xml:space="preserve">
+    <value>Focus Background color</value>
+  </data>
+  <data name="WcSuggestedButtonScrollBackgroundcolor.Help" xml:space="preserve">
+    <value>Suggested buttons scroll background color (Default: #ffffff)</value>
+  </data>
+  <data name="WcSuggestedButtonScrollBackgroundcolor.Text" xml:space="preserve">
+    <value>Scroll background color</value>
+  </data>
+  <data name="WcSuggestedButtonScrollBackgroundcolorFocus.Help" xml:space="preserve">
+    <value>Suggested "Focus" buttons scroll background color (Default: #ffffff)</value>
+  </data>
+  <data name="WcSuggestedButtonScrollBackgroundcolorFocus.Text" xml:space="preserve">
+    <value>Focus scroll color</value>
+  </data>
+  <data name="WcSuggestedButtonScrollSvgFillColor.Help" xml:space="preserve">
+    <value>Suggested buttons scroll svg fill color (Default: #ffffff)</value>
+  </data>
+  <data name="WcSuggestedButtonScrollSvgFillColor.Text" xml:space="preserve">
+    <value>Svg scroll color</value>
+  </data>
+  <data name="WcSuggestedTextButtonColor.Help" xml:space="preserve">
+    <value>Suggested actions text button colors (Default: #0078d7)</value>
+  </data>
+  <data name="WcSuggestedTextButtonColor.Text" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="WcSuggestedTextButtonColorActive.Help" xml:space="preserve">
+    <value>Suggested actions "Active" button text color (Default: #ffffff)</value>
+  </data>
+  <data name="WcSuggestedTextButtonColorActive.Text" xml:space="preserve">
+    <value>Active text color</value>
+  </data>
+  <data name="WcSuggestedTextButtonColorFocus.Help" xml:space="preserve">
+    <value>Suggested actions "Focus" text button colors (Default: #0078d7)</value>
+  </data>
+  <data name="WcSuggestedTextButtonColorFocus.Text" xml:space="preserve">
+    <value>Focus Text color</value>
+  </data>
+  <data name="WcTimeTextColor.Help" xml:space="preserve">
+    <value>Chat text time color (default: #999999)</value>
+  </data>
+  <data name="WcTimeTextColor.Text" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="WcFontFamily.Help" xml:space="preserve">
+    <value>Type general font family for all chat text (Default: "Segoe UI", sans-serif)</value>
+  </data>
+  <data name="WcFontFamily.Text" xml:space="preserve">
+    <value>Font family</value>
+  </data>
+  <data name="WcFontSize.Help" xml:space="preserve">
+    <value>Type general font size for all chat text (Default: 15px)</value>
+  </data>
+  <data name="WcFontSize.Text" xml:space="preserve">
+    <value>Font size</value>
+  </data>
+  <data name="WcConsoleSvgBackgroundcolor.Help" xml:space="preserve">
+    <value>Choose background color for send button (Default: transparent)</value>
+  </data>
+  <data name="WcConsoleSvgBackgroundcolor.Text" xml:space="preserve">
+    <value>Background color</value>
+  </data>
+  <data name="lblWebchatType.Help" xml:space="preserve">
+    <value>Select how the webchat will show (bubbled side hidden or classic style)</value>
+  </data>
+  <data name="lblWebchatType.Text" xml:space="preserve">
+    <value>Chat view style</value>
+  </data>
+</root>
